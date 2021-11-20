@@ -1,5 +1,6 @@
 from Producto import Producto
 from Boleta import Boleta
+from funciones import *
 
 numeBoleta = 0
 
@@ -30,18 +31,6 @@ listaProducto.append(pro)
 
 ListaBoleta = []
 
-def buscarPoducto(id,listaProducto):
-    for p in listaProducto:
-        if id == p.id:
-            return p
-        else:
-            None
-# def buscarProduc(id,listaProducto):
-#     for p in listaProducto:
-#         if id == p.id:
-#             return p.nombreProduc
-#         else:
-#             return None
 while True:
     print("\n1. Agregar Product"+\
           "\n2. Actualizar Precio"+\
@@ -51,14 +40,32 @@ while True:
     if x == 1:
         for i in listaProducto:
             print(i.mostrarProducto())
-        ingreIdProduc = int(input("Ingrece el ID del producto a agregar: "))
-        bus = buscarPoducto(ingreIdProduc,listaProducto)
-        if bus == None:
-            print("producto no encontrado")
+        ingreIdProduc = int(input("\nIngrece el ID del producto a agregar: "))
+        busProduc = buscarPoducto(ingreIdProduc,listaProducto)
+        
+        if busProduc == None:
+            print("producto no tiene stock")
         else:
-            # numeBoleta += 1
-            # indice = bus - 1
-            # boleta = Boleta(numeBoleta,)
+            buscarStock = buscarStock(ingreIdProduc,listaProducto)
+            if buscarStock == None:
+                print("Producto sin stock!!")
+            else:
+                a = int(input("\nEL producto tiene "+str(buscarStock)+" de stock cuanto se llevará: "))
+                busPrecio = buscarPoducto(ingreIdProduc,listaProducto)
+                numeBoleta += 1
+                precio = busPrecio * a
+                crearboleta = Boleta(numeBoleta, busProduc, a, precio)
+                ListaBoleta.append(crearboleta)
+                # print("\nSunumero de boleta es: "+str(numeBoleta))
+    elif x == 3:
+        print("BOLETA\n")
+        for i in ListaBoleta:
+            print(i.mostrarBoleta()) 
+
+    elif x == 4:
+        break
+
+
             
 
 
