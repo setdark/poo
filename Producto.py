@@ -9,4 +9,7 @@ class Producto:
         return "\nID      : " + str(self.id) +\
                "\nProducto: " + self.nombreProduc
     
-          
+    def mostrarProductoCompleto(self):
+        return "\nID      : " + str(self.id) +\
+               "\nProducto: " + self.nombreProduc +\
+               "\nprecio   : " + str(self.precioProduc)

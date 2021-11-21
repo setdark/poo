@@ -6,8 +6,8 @@ class Boleta:
         self.precioArticulo = precioArticulo
 
     def mostrarBoleta(self):
-        return "\nNum Boleta     : " + str(self.numeroBoleta) +\
-               "\nArticulo: " + self.articulo +\
+        return "\nNum Boleta: " + str(self.numeroBoleta) +\
+               "\nArticulo  : " + self.articulo +\
                "\nCantidad  : " + str(self.cantidad) +\
-               "\nPrecio   : " + str(self.precioArticulo)
+               "\nPrecio    : " + str(self.precioArticulo)
 
