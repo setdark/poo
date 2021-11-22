@@ -9,5 +9,5 @@ class Boleta:
         return "\nNum Boleta: " + str(self.numeroBoleta) +\
                "\nArticulo  : " + self.articulo +\
                "\nCantidad  : " + str(self.cantidad) +\
-               "\nPrecio    : " + str(self.precioArticulo)
+               "\nPrecio    : $" + str(self.precioArticulo)
 
